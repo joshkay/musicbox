@@ -10,16 +10,36 @@ class Album extends Component
     const album = albumData.find(album => {
       return album.slug === this.props.match.params.slug;
     });
-    const initialSong = 0;
 
     this.state = {
       album: album,
-      currentSong: album.songs[initialSong],
-      isPlaying: false
+      currentSong: null,
+      isPlaying: false,
+      hoveredSong: null
     };
 
     this.audioElement = document.createElement('audio');
-    this.audioElement.src = this.state.currentSong.audioSrc;
+  }
+
+  componentDidMount()
+  {
+    this.eventListeners = {
+      ended: e => {
+        this.setState({
+          isPlaying: false,
+          currentSong: null
+        });
+      }
+    };
+
+    this.audioElement.addEventListener('ended', this.eventListeners.ended);
+  }
+
+  componentWillUnmount()
+  {
+    this.audioElement.src = null;
+    this.audioElement.removeEventListener('ended', this.eventListeners.ended);
+    this.audioElement = null;
   }
 
   play()
@@ -63,6 +83,20 @@ class Album extends Component
     }
   }
 
+  handleSongMouseEnter(song)
+  {
+    this.setState({
+      hoveredSong: song
+    });
+  }
+
+  handleSongMouseLeave(song)
+  {
+    this.setState({
+      hoveredSong: null
+    });
+  }
+
   render()
   {
     return (
@@ -83,15 +117,35 @@ class Album extends Component
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
-            {
-              this.state.album.songs.map((song, index) => 
-                <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
-                  <td>{index + 1}</td>
-                  <td>{song.title}</td>
-                  <td>{song.duration}</td>
-                </tr>
-              )
-            }
+          {
+            this.state.album.songs.map((song, index) => 
+              <tr className="song" key={index} 
+                onClick={() => this.handleSongClick(song)}
+                onMouseEnter={() => this.handleSongMouseEnter(song)}
+                onMouseLeave={() => this.handleSongMouseLeave(song)}>
+                <td>
+                {
+                  (() => {
+                    if (song === this.state.currentSong &&
+                        this.state.isPlaying)
+                    {
+                      return <span className="icon ion-md-pause"></span>
+                    }
+                    else if ((song === this.state.currentSong &&
+                             !this.state.isPlaying) ||
+                             this.state.hoveredSong === song)
+                    {
+                      return <span className="icon ion-md-play"></span>
+                    }
+                    return index + 1
+                  })()
+                }
+                </td>
+                <td>{song.title}</td>
+                <td>{song.duration}</td>
+              </tr>
+            )
+          }
           </tbody>
         </table>
       </section>
