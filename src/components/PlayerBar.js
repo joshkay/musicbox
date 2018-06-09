@@ -17,7 +17,7 @@ class PlayerBar extends Component
             <span className="ion ion-md-skip-forward"></span>
           </button>
           <section id="time-control">
-            <div className="current-time">{this.props.currentTime}</div>
+            <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
             <input 
               type="range" 
               className="seek-bar"
@@ -27,11 +27,19 @@ class PlayerBar extends Component
               step="0.01"
               onChange={this.props.handleTimeChange}
             />
-            <div className="total-time">{this.props.duration || 0}</div>
+            <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
           </section>
           <section id="volume-control">
             <span className="ion ion-md-volume-low"></span>
-            <input type="range" className="seek-bar" value="80" />
+            <input 
+              type="range" 
+              className="seek-bar"
+              value={this.props.volume}
+              max="1"
+              min="0"
+              step="0.01"
+              onChange={this.props.handleVolumeChange}
+            />
             <span className="ion ion-md-volume-high"></span>
           </section>
         </section>
