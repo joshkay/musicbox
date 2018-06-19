@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./index.css";
+import './LandingImage.css';
 
 const LandingImage = (props) => (
   <div className="landingImageContainer row">

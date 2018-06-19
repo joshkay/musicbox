@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./index.css";
+import './PromoFooter.css';
 
 const PromoFooter = (props) => (
   <footer className="footer text-center">

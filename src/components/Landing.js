@@ -7,8 +7,6 @@ import LandingImage from './LandingImage';
 const Landing = () => (
   <section className="landing">
     <LandingImage
-      img="/assets/images/stock_music_photo.jpg"
-      imgAlt="Woman listening to music"
       imgText="Turn the music up!"
     />
     

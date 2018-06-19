@@ -1,0 +1,30 @@
+.albumList {
+  margin-bottom: 15px;
+}
+
+.albumLink {
+  margin-top: 15px;
+}
+
+.albumLink:hover {
+  text-decoration: none !important;
+}
+
+.albumLink div {
+  text-align: center;
+  color: black;
+}
+
+.albumLinkTitle {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.albumLinkArtist {
+  font-size: 18px;
+}
+
+.albumLinkSongCount {
+  font-size: 15px;
+  font-weight: 100;
+}

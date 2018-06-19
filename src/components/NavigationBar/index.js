@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './index.css'
+import './NavigationBar.css';
 
 const NavigationBar = (props) => (
   <nav className="navbar sticky-top navbar-dark bg-dark">
