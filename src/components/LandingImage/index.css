@@ -1,0 +1,18 @@
+.landingImageContainer {
+  position: relative;
+  background-image: url(/assets/images/stock_music_photo.jpg);
+  background-position: center center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.landingImageText {
+  width: 100%;
+  color: white;
+  font-weight: 400;
+  font-size: 65px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  position: absolute;
+  top: 45%;
+}

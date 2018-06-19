@@ -1,0 +1,13 @@
+import React from 'react';
+
+import './index.css'
+
+const FeatureListing = (props) => (
+  <div className="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
+    <span className={`featureIcon ion ion-md-${props.icon}`}></span>
+    <h3>{props.heading}</h3>
+    <p className="text-muted">{props.content}</p>
+  </div>
+);
+
+export default FeatureListing;
