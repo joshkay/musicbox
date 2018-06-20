@@ -2,9 +2,7 @@ html {
   position: relative;
   min-height: 100%;
 }
-.content {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-}
+
 .sticky-footer {
   position: fixed;
   bottom: 0;

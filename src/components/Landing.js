@@ -5,7 +5,7 @@ import PromoFooter from './PromoFooter/index';
 import LandingImage from './LandingImage';
 
 const Landing = () => (
-  <section className="content landing">
+  <section className="landing">
     <LandingImage
       imgText="Turn the music up!"
     />
@@ -31,6 +31,9 @@ const Landing = () => (
     <PromoFooter
       name="Josh Kay"
       nameURL="http://www.linkedin.com/in/joshmkay"
+      githubURL="https://github.com/joshkay"
+      twitterURL="https://twitter.com/joshmkay"
+      linkedinURL="http://www.linkedin.com/in/joshmkay"
     />
   </section>
 );

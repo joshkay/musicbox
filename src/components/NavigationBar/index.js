@@ -6,7 +6,7 @@ import './NavigationBar.css';
 const NavigationBar = (props) => (
   <nav className="navbar sticky-top navbar-dark bg-dark">
     <Link className="navbar-brand" to='/'>
-      {/* <span className="brandIcon ion ion-md-musical-note"></span>
+      {/* <span className="brandIcon icon ion-md-musical-note"></span>
       Bloc Jams */}
       <img height="40" src="/assets/images/bloc_jams_logo.png" alt="Bloc Jams logo" />
     </Link>
@@ -18,7 +18,10 @@ const NavigationBar = (props) => (
         </Link>
       </li>
     </ul>
-    
+
+    <a href={props.githubURL} target="_blank" className="github-project">
+      <span className="icon ion-logo-github"></span>
+    </a>
   </nav>
 );
 

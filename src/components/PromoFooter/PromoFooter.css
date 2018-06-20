@@ -2,16 +2,21 @@ html {
   position: relative;
   min-height: 100%;
 }
-.content {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+
+.landing {
+  margin-bottom: 57px;
 }
+@media (max-width: 767.98px) { 
+  .landing {
+    margin-bottom: 113px;
+  } 
+}
+
 .fixed-footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
   color: white;
   background-color: #343a40;
 }
@@ -21,4 +26,21 @@ html {
 .fixed-footer a {
   color: rgba(255,255,255,.5);
   text-decoration: none;
+}
+
+.promo-links {
+  padding: 10px;
+}
+.promo-links a {
+  color: white;
+  font-size: 25px;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+.promo-links a:hover {
+  color: rgba(255,255,255,.5);
+}
+
+.written-content {
+  padding: 16px;
 }

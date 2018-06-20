@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <div>
         <header>
-          <NavigationBar />
+          <NavigationBar
+            githubURL="https://github.com/joshkay/bloc-jams-react"   
+          />
         </header>
         <main className="container-fluid">
           <Route exact path="/" component={Landing} />

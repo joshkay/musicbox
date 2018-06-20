@@ -29,28 +29,28 @@ class PlayerBar extends Component
     let volumeClass;
     if (this.props.volume < 0.05)
     {
-      volumeClass = "ion ion-md-volume-mute";
+      volumeClass = "icon ion-md-volume-mute";
     }
     else if (this.props.volume < 0.7)
     {
-      volumeClass = "ion ion-md-volume-low";
+      volumeClass = "icon ion-md-volume-low";
     }
     else
     {
-      volumeClass = "ion ion-md-volume-high";
+      volumeClass = "icon ion-md-volume-high";
     }
 
     return (
       <footer className="sticky-footer player-bar row">
         <section id="buttons" className="col-12 col-md-3 text-center">
           <button id="previous" className="player-bar-button" onClick={this.props.handlePrevClick}>
-            <span className="ion ion-md-skip-backward"></span>
+            <span className="icon ion-md-skip-backward"></span>
           </button>
           <button id="play-pause" className="player-bar-button" onClick={this.props.handleSongClick}>
-            <span className={this.props.isPlaying ? "ion ion-md-pause" : "ion ion-md-play"}></span>
+            <span className={this.props.isPlaying ? "icon ion-md-pause" : "icon ion-md-play"}></span>
           </button>
           <button id="next" className="player-bar-button" onClick={this.props.handleNextClick}>
-            <span className="ion ion-md-skip-forward"></span>
+            <span className="icon ion-md-skip-forward"></span>
           </button>
         </section>
 
