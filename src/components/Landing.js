@@ -5,7 +5,7 @@ import PromoFooter from './PromoFooter/index';
 import LandingImage from './LandingImage';
 
 const Landing = () => (
-  <section className="landing">
+  <section className="content landing">
     <LandingImage
       imgText="Turn the music up!"
     />

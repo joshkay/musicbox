@@ -2,10 +2,10 @@ html {
   position: relative;
   min-height: 100%;
 }
-.landing {
+.content {
   margin-bottom: 60px; /* Margin bottom by footer height */
 }
-.footer {
+.fixed-footer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -15,10 +15,10 @@ html {
   color: white;
   background-color: #343a40;
 }
-.footer p {
+.fixed-footer p {
   margin-bottom: 0;
 }
-.footer a {
+.fixed-footer a {
   color: rgba(255,255,255,.5);
   text-decoration: none;
 }

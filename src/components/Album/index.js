@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import albumData from './../data/albums';
-import PlayerBar from './PlayerBar';
+import albumData from './../../data/albums';
+import PlayerBar from './../PlayerBar';
+
+import './Album.css';
 
 class Album extends Component
 {
@@ -54,8 +56,8 @@ class Album extends Component
   componentWillUnmount()
   {
     this.audioElement.src = null;
-    this.audioElement.removeEventListener('timeupdate', this.eventListeners.ended);
-    this.audioElement.removeEventListener('durationchange', this.eventListeners.ended);
+    this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
+    this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
     this.audioElement.removeEventListener('ended', this.eventListeners.ended);
     this.audioElement = null;
   }
@@ -189,54 +191,65 @@ class Album extends Component
   render()
   {
     return (
-      <section className="album">
-        <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
-          <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
+      <div>
+        <section className="content album row">
+          <section id="album-info" className="col-12 col-md-6 text-center">
+            <img id="album-cover-art" className="img-fluid" src={this.state.album.albumCover} alt={this.state.album.title} />
+            <div className="album-details">
+              <h1 id="album-title">{this.state.album.title}</h1>
+              <h2 className="artist">{this.state.album.artist}</h2>
+              <div id="release-info">{this.state.album.releaseInfo}</div>
+            </div>
+          </section>
+          
+          <div id="song-list-container" className="col-12 col-md-6">
+            <table id="song-list">
+              <colgroup>
+                <col id="song-number-column" />
+                <col id="song-title-column" />
+                <col id="song-duration-column" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>TITLE</th>
+                  <th><span className="icon ion-md-time"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                this.state.album.songs.map((song, index) => 
+                  <tr className="song" key={index} 
+                    onClick={() => this.handleSongClick(song)}
+                    onMouseEnter={() => this.handleSongMouseEnter(song)}
+                    onMouseLeave={() => this.handleSongMouseLeave(song)}>
+                    <td>
+                    {
+                      (() => {
+                        if (song === this.state.currentSong &&
+                            this.state.isPlaying)
+                        {
+                          return <span className="icon ion-md-pause"></span>
+                        }
+                        else if ((song === this.state.currentSong &&
+                                !this.state.isPlaying) ||
+                                this.state.hoveredSong === song)
+                        {
+                          return <span className="icon ion-md-play"></span>
+                        }
+                        return index + 1
+                      })()
+                    }
+                    </td>
+                    <td>{song.title}</td>
+                    <td>{this.formatTime(song.duration)}</td>
+                  </tr>
+                )
+              }
+              </tbody>
+            </table>
           </div>
         </section>
-        
-        <table id="song-list">
-          <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
-          </colgroup>
-          <tbody>
-          {
-            this.state.album.songs.map((song, index) => 
-              <tr className="song" key={index} 
-                onClick={() => this.handleSongClick(song)}
-                onMouseEnter={() => this.handleSongMouseEnter(song)}
-                onMouseLeave={() => this.handleSongMouseLeave(song)}>
-                <td>
-                {
-                  (() => {
-                    if (song === this.state.currentSong &&
-                        this.state.isPlaying)
-                    {
-                      return <span className="icon ion-md-pause"></span>
-                    }
-                    else if ((song === this.state.currentSong &&
-                             !this.state.isPlaying) ||
-                             this.state.hoveredSong === song)
-                    {
-                      return <span className="icon ion-md-play"></span>
-                    }
-                    return index + 1
-                  })()
-                }
-                </td>
-                <td>{song.title}</td>
-                <td>{this.formatTime(song.duration)}</td>
-              </tr>
-            )
-          }
-          </tbody>
-        </table>
 
         <PlayerBar 
           isPlaying={this.state.isPlaying} 
@@ -249,8 +262,9 @@ class Album extends Component
           handlePrevClick={() => this.handlePrevClick()}
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
-          handleVolumeChange={(e) => this.handleVolumeChange(e)} />
-      </section>
+          handleVolumeChange={(e) => this.handleVolumeChange(e)} 
+        />
+      </div>
     );
   }
 }
