@@ -4,11 +4,11 @@ html {
 }
 
 .landing {
-  margin-bottom: 57px;
+  margin-bottom: 113px;
 }
-@media (max-width: 767.98px) { 
+@media (min-width: 768px) { 
   .landing {
-    margin-bottom: 113px;
+    margin-bottom: 57px;
   } 
 }
 

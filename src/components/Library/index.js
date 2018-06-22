@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Row, Col } from 'reactstrap';
+
 import './Library.css';
 
 import albumData from './../../data/albums';
@@ -23,22 +25,23 @@ class Library extends Component
     {
       albums.push(
           this.state.albums.map((album, index) =>
-          <Link to={`/album/${album.slug}`} key={index} className="albumLink col-12 col-sm-6 col-md-4 col-xl-3">
+          <Col tag={Link} to={`/album/${album.slug}`} key={index} 
+             xs="12" sm="6" md="4" xl="3" className="albumLink">
             <img height="265" className="img-fluid" src={album.albumCover} alt={album.title} />
             <div className="albumLinkTitle">{album.title}</div>
             <div className="albumLinkArtist">{album.artist}</div>
             <div className="albumLinkSongCount">{album.songs.length} songs</div>
-          </Link>
+          </Col>
         )
       );
     }
 
     return (
-      <section className="row albumList">
-      {
-        albums
-      }
-      </section>
+      <Row tag="section" className="albumList">
+        {
+          albums
+        }
+      </Row>
     );
   }  
 }

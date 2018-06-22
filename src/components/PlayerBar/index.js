@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Row, Col } from 'reactstrap';
+
 import './PlayerBar.css';
 
 class PlayerBar extends Component
@@ -41,8 +43,8 @@ class PlayerBar extends Component
     }
 
     return (
-      <footer className="sticky-footer player-bar row">
-        <section id="buttons" className="col-12 col-md-3 text-center">
+      <Row tag="footer" className="text-center sticky-footer player-bar">
+        <Col tag="section" xs="12" md="3" id="buttons">
           <button id="previous" className="player-bar-button" onClick={this.props.handlePrevClick}>
             <span className="icon ion-md-skip-backward"></span>
           </button>
@@ -52,15 +54,15 @@ class PlayerBar extends Component
           <button id="next" className="player-bar-button" onClick={this.props.handleNextClick}>
             <span className="icon ion-md-skip-forward"></span>
           </button>
-        </section>
+        </Col>
 
-        <section id="time-control" className="col-12 col-md-6 text-center">
+        <Col tag="section" xs="12" md="6" id="time-control">
           {
             timeControl
           }
-        </section>
+        </Col>
 
-        <section id="volume-control" className="col-12 col-md-3 text-center">
+        <Col tag="section" xs="12" md="3" id="volume-control">
           <span id="volume-indicator" className={volumeClass}></span>
           <input 
             type="range"
@@ -71,8 +73,8 @@ class PlayerBar extends Component
             step="0.01"
             onChange={this.props.handleVolumeChange}
           />
-        </section>
-      </footer>
+        </Col>
+      </Row>
     );
   }
 }

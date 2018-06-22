@@ -1,8 +1,10 @@
 import React from 'react';
 
-import FeatureListing from './FeatureListing';
-import PromoFooter from './PromoFooter/index';
-import LandingImage from './LandingImage';
+import { Row } from 'reactstrap';
+
+import FeatureListing from './../FeatureListing';
+import PromoFooter from './../PromoFooter';
+import LandingImage from './../LandingImage';
 
 const Landing = () => (
   <section className="landing">
@@ -10,7 +12,7 @@ const Landing = () => (
       imgText="Turn the music up!"
     />
     
-    <div className="row">
+    <Row>
       <FeatureListing 
         heading="Choose your music" 
         content="The world is full of music; why should you have to listen to music that someone else chose?"
@@ -26,7 +28,7 @@ const Landing = () => (
         content="Listen to your music on the go. This streaming service is available on all mobile platforms."
         icon="phone-portrait"
       />
-    </div>
+    </Row>
 
     <PromoFooter
       name="Josh Kay"

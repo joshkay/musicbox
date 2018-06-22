@@ -1,28 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { 
+  Navbar,
+  NavbarBrand, 
+  Nav,
+  NavItem, 
+  NavLink 
+} from 'reactstrap';
+
 import './NavigationBar.css';
 
 const NavigationBar = (props) => (
-  <nav className="navbar sticky-top navbar-dark bg-dark">
-    <Link className="navbar-brand" to='/'>
-      {/* <span className="brandIcon icon ion-md-musical-note"></span>
-      Bloc Jams */}
+  <Navbar dark color="dark">
+    <NavbarBrand tag={Link} to="/">
       <img height="40" src="/assets/images/bloc_jams_logo.png" alt="Bloc Jams logo" />
-    </Link>
+    </NavbarBrand>
     
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item">
-        <Link className="nav-link" to='/library'>
+    <Nav navbar className="mr-auto">
+      <NavItem>
+        <NavLink tag={Link} to="/library">
           Library
-        </Link>
-      </li>
-    </ul>
-
+        </NavLink>
+      </NavItem>
+    </Nav>
+    
     <a href={props.githubURL} target="_blank" className="github-project">
       <span className="icon ion-logo-github"></span>
     </a>
-  </nav>
+  </Navbar>
 );
 
 export default NavigationBar;

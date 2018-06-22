@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../../data/albums';
+
+import { Row, Col } from 'reactstrap';
+
 import PlayerBar from './../PlayerBar';
 
 import './Album.css';
@@ -192,17 +195,17 @@ class Album extends Component
   {
     return (
       <div>
-        <section className="content album row">
-          <section id="album-info" className="col-12 col-md-6 text-center">
+        <Row tag="section" className="content album">
+          <Col tag="section" xs="12" md="6" id="album-info" className="text-center">
             <img id="album-cover-art" className="img-fluid" src={this.state.album.albumCover} alt={this.state.album.title} />
             <div className="album-details">
               <h1 id="album-title">{this.state.album.title}</h1>
               <h2 className="artist">{this.state.album.artist}</h2>
               <div id="release-info">{this.state.album.releaseInfo}</div>
             </div>
-          </section>
+          </Col>
           
-          <div id="song-list-container" className="col-12 col-md-6">
+          <Col xs="12" md="6" id="song-list-container">
             <table id="song-list">
               <colgroup>
                 <col id="song-number-column" />
@@ -248,8 +251,8 @@ class Album extends Component
               }
               </tbody>
             </table>
-          </div>
-        </section>
+          </Col>
+        </Row>
 
         <PlayerBar 
           isPlaying={this.state.isPlaying} 

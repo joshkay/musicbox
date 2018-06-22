@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { Row } from 'reactstrap';
+
 import './LandingImage.css';
 
 const LandingImage = (props) => (
-  <div className="landingImageContainer row">
-    {/* <img className="img-fluid" src={props.img} alt={props.imgAlt} /> */}
+  <Row className="landingImageContainer">
     <h1 className="landingImageText">{props.imgText}</h1>
-  </div>
+  </Row>
 );
 
 export default LandingImage;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
+import { Container } from 'reactstrap';
+
 import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
@@ -15,11 +17,11 @@ class App extends Component {
             githubURL="https://github.com/joshkay/bloc-jams-react"   
           />
         </header>
-        <main className="container-fluid">
+        <Container fluid>
           <Route exact path="/" component={Landing} />
           <Route path="/library" component={Library} />
           <Route path="/album/:slug" component={Album} />
-        </main>
+        </Container>
       </div>
     );
   }
