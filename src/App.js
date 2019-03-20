@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <header>
           <NavigationBar
-            githubURL="https://github.com/joshkay/bloc-jams-react"   
+            githubURL="https://github.com/joshkay/musicbox"   
           />
         </header>
         <Container fluid>

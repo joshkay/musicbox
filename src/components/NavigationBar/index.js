@@ -13,8 +13,11 @@ import './NavigationBar.css';
 
 const NavigationBar = (props) => (
   <Navbar dark color="dark">
+    <NavbarBrand tag={Link} to="/" className="mr-1">
+      <img height="35" src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Music Box logo" />
+    </NavbarBrand>
     <NavbarBrand tag={Link} to="/">
-      <img height="40" src="/assets/images/bloc_jams_logo.png" alt="Bloc Jams logo" />
+      Music Box
     </NavbarBrand>
     
     <Nav navbar className="mr-auto">

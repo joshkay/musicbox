@@ -35,7 +35,8 @@ html {
 }
 
 #volume-indicator {
-  width: 10px;
+  display: inline-block;
+  width: 15px;
 }
 
 .seek-bar {
@@ -66,7 +67,7 @@ html {
   height: 20px;
   width: 20px;
   border-radius: 10px;
-  background: #CF3E7A;
+  background: #ffb22b;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.6px;
@@ -90,7 +91,7 @@ html {
   height: 20px;
   width: 39px;
   border-radius: 7px;
-  background: #CF3E7A;
+  background: #ffb22b;
   cursor: pointer;
 }
 .seek-bar::-ms-track {
@@ -119,7 +120,7 @@ html {
   height: 20px;
   width: 39px;
   border-radius: 7px;
-  background: #CF3E7A;
+  background: #ffb22b;
   cursor: pointer;
 }
 .seek-bar:focus::-ms-fill-lower {
