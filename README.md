@@ -23,4 +23,4 @@
 
 ## Authors
 
-- **[Josh Kay](https://github.com/joshkay)**
+- **[Josh Kay](https://joshkay.ca)**
