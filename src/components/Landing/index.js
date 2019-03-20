@@ -32,10 +32,10 @@ const Landing = () => (
 
     <PromoFooter
       name="Josh Kay"
-      nameURL="http://www.linkedin.com/in/joshmkay"
+      nameURL="https://joshkay.ca"
       githubURL="https://github.com/joshkay"
       twitterURL="https://twitter.com/joshmkay"
-      linkedinURL="http://www.linkedin.com/in/joshmkay"
+      linkedinURL="https://www.linkedin.com/in/joshmkay"
     />
   </section>
 );
