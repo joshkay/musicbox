@@ -11,13 +11,13 @@ import NavigationBar from './components/NavigationBar';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="root">
         <header>
           <NavigationBar
             githubURL="https://github.com/joshkay/musicbox"   
           />
         </header>
-        <Container fluid>
+        <Container className="rootContainer" fluid>
           <Route exact path="/" component={Landing} />
           <Route path="/library" component={Library} />
           <Route path="/album/:slug" component={Album} />

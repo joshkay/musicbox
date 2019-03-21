@@ -3,19 +3,16 @@ html {
   min-height: 100%;
 }
 
-.landing {
+/* .landing {
   margin-bottom: 113px;
 }
 @media (min-width: 768px) { 
   .landing {
     margin-bottom: 57px;
   } 
-}
+} */
 
 .fixed-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   color: white;
   background-color: #343a40;
@@ -29,7 +26,12 @@ html {
 }
 
 .promo-links {
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
+}
+@media (min-width: 768px) { 
+  .promo-links {
+    padding: 10px;
+  }
 }
 .promo-links a {
   color: white;

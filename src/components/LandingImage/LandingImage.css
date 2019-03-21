@@ -3,6 +3,7 @@
   background-image: url(/assets/images/stock_music_photo.jpg);
   background-position: center center;
   background-size: cover;
+  flex-grow: 1;
   min-height: 500px;
 }
 
