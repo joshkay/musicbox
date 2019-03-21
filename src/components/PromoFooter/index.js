@@ -10,17 +10,17 @@ const PromoFooter = (props) => (
       <Row>
         <Col xs="12" md="9">
           <p className="written-content text-center">
-            Written and coded by <a href={props.nameURL} target="_blank">{props.name}</a>.
+            Written and coded by <a href={props.nameURL} target="_blank" rel="noopener noreferrer">{props.name}</a>.
           </p>
         </Col>
         <Col xs="12" md="3" className="promo-links text-center">
-          <a href={props.githubURL} target="_blank">
+          <a href={props.githubURL} target="_blank" rel="noopener noreferrer">
             <span className="icon ion-logo-github"></span>
           </a>
-          <a href={props.twitterURL} target="_blank">
+          <a href={props.twitterURL} target="_blank" rel="noopener noreferrer">
             <span className="icon ion-logo-twitter"></span>
           </a>
-          <a href={props.linkedinURL} target="_blank">
+          <a href={props.linkedinURL} target="_blank" rel="noopener noreferrer">
             <span className="icon ion-logo-linkedin"></span>
           </a>
         </Col>

@@ -28,7 +28,7 @@ const NavigationBar = (props) => (
       </NavItem>
     </Nav>
     
-    <a href={props.githubURL} target="_blank" className="github-project">
+    <a href={props.githubURL} target="_blank" rel="noopener noreferrer" className="github-project">
       <span className="icon ion-logo-github"></span>
     </a>
   </Navbar>
